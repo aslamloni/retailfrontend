@@ -1,0 +1,84 @@
+<div class="container">
+  <h2 class="form-title">Item Management</h2>
+  <form>
+    <div class="table-container">
+      <div style="float: right"><a href="/host-dashboard/item-details">Back</a></div>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <div class="form-group">
+                <label for="itemName">Item Name</label>
+                <input type="text" id="itemName" [(ngModel)]="model.itemName" name="itemName" />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <label for="itemCode">Item Code</label>
+                <input type="text" id="itemCode" [(ngModel)]="model.itemCode" name="itemCode" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="form-group">
+                <label for="itemLocation">Item Location</label>
+                <input type="text" id="itemLocation" [(ngModel)]="model.location" name="itemLocation" />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <label for="itemSalePrice">Sale Price</label>
+                <input type="text" id="itemSalePrice" [(ngModel)]="model.salePrice" name="itemSalePrice" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="form-group">
+                <label for="itemPurchasePrice">Purchase Price</label>
+                <input
+                  type="text"
+                  id="itemPurchasePrice"
+                  [(ngModel)]="model.purchasePrice" 
+                  name="itemPurchasePrice"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <label for="itemDiscountPrice">Discount Price (%)</label>
+                <input
+                  type="text"
+                  id="itemDiscountPrice"
+                  [(ngModel)]="model.discountPrice" 
+                  name="itemDiscountPrice"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="form-group">
+                <label for="itemCGST">CGST (%)</label>
+                <input type="text" id="itemCGST" [(ngModel)]="model.cgst" name="itemCGST" />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <label for="itemSGST">SGST (%)</label>
+                <input type="text" id="itemSGST" [(ngModel)]="model.sgst" name="itemSGST" />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="button-group">
+      <button type="button" (click) = "Save()">Create</button>
+      <!--<button type="button">Read</button>-->
+      <button type="button" (click)="Update()">Update</button>
+      <!--<button type="button">Delete</button>-->
+    </div>
+  </form>
+</div>

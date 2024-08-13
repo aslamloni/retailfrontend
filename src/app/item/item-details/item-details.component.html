@@ -1,0 +1,75 @@
+<div>
+  <div class="table-container">
+    <div style="float: right"><a href="/host-dashboard/add-item">Add New</a></div>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <div class="form-group">
+              <label for="itemName">Item Name</label>
+            </div>
+          </th>
+          <th>
+            <div class="form-group">
+              <label for="itemCode">Item Code</label>
+            </div>
+          </th>
+          <th>
+            <div class="form-group">
+              <label for="itemLocation">Location</label>
+            </div>
+          </th>
+          <th>
+            <div class="form-group">
+              <label for="itemSalePrice">Sale Price</label>
+            </div>
+          </th>
+          <th>
+            <div class="form-group">
+              <label for="itemPurchasePrice">Purchase Price</label>
+            </div>
+          </th>
+          <th>
+            <div class="form-group">
+              <label for="itemDiscountPrice">Discount (%)</label>
+            </div>
+          </th>
+          <th>
+            <div class="form-group">
+              <label for="itemCGST">CGST (%)</label>
+            </div>
+          </th>
+          <th>
+            <div class="form-group">
+              <label for="itemSGST">SGST (%)</label>
+            </div>
+          </th>
+          <th>
+            <div class="form-group">
+              <label for="itemActions">Actions</label>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of items; track item.itemId) {
+        <tr>
+          <td style="width: 20%;">{{ item.itemName }}</td>
+          <td>{{ item.itemCode }}</td>
+          <td>{{ item.location }}</td>
+          <td>{{ item.salePrice }}</td>
+          <td>{{ item.purchasePrice }}</td>
+          <td>{{ item.discountPrice }}</td>
+          <td>{{ item.cgst }}</td>
+          <td>{{ item.sgst }}</td>
+          <td>
+            <span (click)="EditItem(item)">Edit</span>|
+            <span (click)="Delete(item)">Delete</span>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+

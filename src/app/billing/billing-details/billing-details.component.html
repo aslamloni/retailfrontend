@@ -1,0 +1,64 @@
+<div>
+    <div class="table-container">
+      <div style="float: right"><a href="/host-dashboard/add-bill">Add New</a></div>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <div class="form-group">
+                <label for="billType">Bill Type</label>
+              </div>
+            </th>
+            <th>
+              <div class="form-group">
+                <label for="name">Name</label>
+              </div>
+            </th>
+            <th>
+              <div class="form-group">
+                <label for="contactNo">Contact No</label>
+              </div>
+            </th>
+            <th>
+              <div class="form-group">
+                <label for="address">Address</label>
+              </div>
+            </th>
+            <th>
+              <div class="form-group">
+                <label for="paymentMode">Payment Mode</label>
+              </div>
+            </th>
+            <th>
+              <div class="form-group">
+                <label for="paymentStatus">payment Status</label>
+              </div>
+            </th>
+            <th>
+              <div class="form-group">
+                <label for="itemActions">Actions</label>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of bills; track item.id) {
+          <tr>
+            <td>{{ item.billType }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.contactNo }}</td>
+            <td>{{ item.address }}</td>
+            <td>{{ item.paymentMode }}</td>
+            <td>{{ item.paymentStatus }}</td>
+            <td>
+              <span (click)="EditItem(item)">Edit</span>|
+              <span (click)="Delete(item)">Delete</span>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  

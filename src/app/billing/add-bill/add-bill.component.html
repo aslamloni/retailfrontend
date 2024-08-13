@@ -1,0 +1,180 @@
+<div class="container">
+  <h2 class="form-title">Billing Management</h2>
+  <form>
+    <div class="table-container">
+      <div style="float: right">
+        <a href="/host-dashboard/billing-details">Back</a>
+      </div>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <div class="form-group">
+                <label for="billType">Bill Type</label>
+                <select
+                  name="itemCode"
+                  id="itemCode"
+                  class="text"
+                  [(ngModel)]="model.billType"
+                >
+                  <option value="1">Client</option>
+                  <option value="2">Supplier</option>
+                </select>
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <label for="billName">Name</label>
+                <input type="text" id="billName" name="billName" />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <label for="billContactNo">Contact Number</label>
+                <input type="text" id="billContactNo" name="billContactNo"/>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="form-group">
+                <label for="paymentMode">Payment Mode</label>
+                <select
+                  name="paymentMode"
+                  id="paymentMode"
+                  [(ngModel)]="model.paymentMode"
+                >
+                  <option value="1">Online</option>
+                  <option value="2">Cash</option>
+                  <option value="3">Cheque</option>
+                </select>
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <label for="paymentStatus">Payment Status</label>
+                <select
+                  name="paymentStatus"
+                  id="paymentStatus"
+                  [(ngModel)]="model.paymentStatus"
+                >
+                  <option value="1">Paid</option>
+                  <option value="2">Partially Paid</option>
+                  <option value="2">Pending</option>
+                </select>
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <label for="billAddress">Address</label>
+                <textarea
+                  name="billAddress"
+                  id="billAddress"
+                  style="width: 100%"
+                ></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="form-group">
+                <label for="itemId">Item</label>
+                <!--<input type="text" id="itemId" name="itemId" />-->
+                <input
+                  type="text"
+                  id="itemCode"
+                  name="itemCode"
+                  (change)="SearchItem($event.target)"
+                  placeholder="Search..."
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <label for="itemQty">Quantity</label>
+                <input type="text" id="itemQty" name="itemQty" (change)="CalTotalAmount($event.target)"/>
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <label for="totalAmount">Amount</label>
+                <input type="text" id="totalAmount" name="totalAmount" [(ngModel)]="model.totalAmount" disabled="true"/>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              @if(searchResult.length > 0){ @for (item of searchResult; track
+              item.itemId) {
+              <tr>
+                <th>
+                  <div class="form-group">
+                    <label for="itemName">Item Name</label>
+                  </div>
+                </th>
+                <th>
+                  <div class="form-group">
+                    <label for="itemCode">Item Code</label>
+                  </div>
+                </th>
+                <th>
+                  <div class="form-group">
+                    <label for="itemLocation">Location</label>
+                  </div>
+                </th>
+                <th>
+                  <div class="form-group">
+                    <label for="itemSalePrice">Sale Price</label>
+                  </div>
+                </th>
+                <th>
+                  <div class="form-group">
+                    <label for="itemPurchasePrice">Purchase Price</label>
+                  </div>
+                </th>
+                <th>
+                  <div class="form-group">
+                    <label for="itemDiscountPrice">Discount (%)</label>
+                  </div>
+                </th>
+                <th>
+                  <div class="form-group">
+                    <label for="itemCGST">CGST (%)</label>
+                  </div>
+                </th>
+                <th>
+                  <div class="form-group">
+                    <label for="itemSGST">SGST (%)</label>
+                  </div>
+                </th>
+                <th>
+                  <div class="form-group">
+                    <label for="itemActions">Actions</label>
+                  </div>
+                </th>
+              </tr>
+              <tr>
+                <td style="width: 20%">{{ item.itemName }}</td>
+                <td>{{ item.itemCode }}</td>
+                <td>{{ item.location }}</td>
+                <td>{{ item.salePrice }}</td>
+                <td>{{ item.purchasePrice }}</td>
+                <td>{{ item.discountPrice }}</td>
+                <td>{{ item.cgst }}</td>
+                <td>{{ item.sgst }}</td>
+                <td><span>Add</span></td>
+              </tr>
+              } }
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="button-group">
+      <button type="button" (click)="Save()">Create</button>
+      <!--<button type="button">Read</button>-->
+      <button type="button" (click)="Update()">Update</button>
+      <!--<button type="button">Delete</button>-->
+    </div>
+  </form>
+</div>

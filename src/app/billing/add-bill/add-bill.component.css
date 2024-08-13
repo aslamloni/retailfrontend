@@ -1,0 +1,114 @@
+body {
+  font-family: "Times New Roman", serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.form-title {
+  text-align: center;
+  margin: 20px 0;
+}
+form {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.button-group {
+  text-align: right;
+  margin-top: 20px;
+}
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #5c5c5c;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+button:hover {
+  background-color: #434343;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start of the cross-axis */
+  height: 100vh; /* Optional: Set the height of the container */
+}
+.flex-item {
+  margin: 10px; /* Optional: Add some space between the items */
+  /* Additional styling for your items */
+}
+.table-container {
+  overflow-x: auto;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+}
+table,
+th,
+td {
+  /*border: 1px solid #000;*/
+}
+th,
+td {
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #ddd;
+}
+@media screen and (max-width: 600px) {
+  table {
+    display: block;
+  }
+  thead {
+    display: none; /* Hide the table headers on small screens */
+  }
+  tr {
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: 2px solid #ddd;
+  }
+  td {
+    display: block;
+    text-align: right;
+    font-size: 15px;
+    border-bottom: 1px dotted #ddd;
+  }
+  td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+}
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
